@@ -1,0 +1,250 @@
+html {
+    scroll-behavior : smooth;
+}
+body {
+    margin : 0;
+    font-size : 100%;
+}
+h1 {
+    font-family : 'Shadows Into Light', cursive;
+}
+h2 {
+    font-family : 'Roboto Condensed', sans-serif;
+}
+main {
+    background-color : darkgray;
+}
+/* Header */
+header {
+    background-color : #a9aeb8;
+    display : flex;
+    align-items : center;
+    height : 20vh;
+    width : auto;
+}
+header div {
+    margin-right : 0;
+}
+header div img {
+    width : auto;
+    height : 100%;
+}
+header h1 {
+    margin : 0;
+    font-size : 4rem;
+}
+header nav {
+    text-align : center;
+    margin-left : auto;
+    margin-right : auto;
+}
+header nav menu {
+    list-style : none;
+    margin : 0;
+    display : flex;
+    justify-content : center;
+}
+header nav menu li {
+    font-size : 1.5rem;
+    padding : 1rem;
+}
+header nav menu li + li:before { /*/ Creates a breadcrumb style nav */
+    padding : 0.5rem;
+    color : black;
+    content : "/\00a0";
+}
+header nav menu li a {
+    text-decoration : none;
+}
+header nav menu li a:hover {
+    text-decoration : underline;
+}
+/* Home Page */
+
+.home .masthead { /*masthead*/
+    height: 85vh;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    background-image: url("../IMG/Masthead.png");
+    filter: grayscale(75%);
+    background-size: cover;
+    transition: all 0.35s linear;
+}
+
+.home .masthead:hover { /*adds hover effect to background image to make it darker when hovered*/
+    filter: grayscale(90%);
+}
+.home .hoverinfo { /* background for text area is transparent until hovered */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 0%;
+    transition: all 0.35s linear;
+}
+
+
+.home .masthead:hover .hoverinfo {
+    background: grey;
+}
+
+.home .hoverinfo h2 { /*Both the H1 and P are hidden until hovered */
+    margin: 0;
+    font-size: 3.75rem;
+    color: transparent;
+    letter-spacing: 1.5px;
+    transition: all 0.35s linear;
+    text-align: center;
+}
+
+.home .hoverinfo p {
+    font-size: 2.5rem;
+    color: transparent;
+    letter-spacing: 1px;
+    transition: all 0.35s linear;
+    text-align: center;
+}
+
+.home .masthead:hover .hoverinfo h2,
+.home .masthead:hover .hoverinfo p {
+    color: white;
+}
+
+/* Company Page */
+
+.company {
+    background-color: darkgray;
+    height: 80vh
+}
+.company .clip {
+    display: grid;
+}
+
+.company .clip1-container { /* Clip pathing and the text with padding so it doesnt get clipped*/
+    background-color: #ebedf0;
+    height: 20vh;
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
+}
+
+.company .clip2-container {
+    background-color: #ebedf0;
+    height: 20vh;
+    clip-path: polygon(100% 0, 0 15%, 0 100%, 100% 85%);
+}
+
+.company .clip3-container {
+    background-color: #ebedf0;
+    height: 20vh;
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 85%);
+}
+
+.company .clip4-container {
+    background-color: #ebedf0;
+    height: 20vh;
+    clip-path: polygon(100% 0, 0 15%, 0 100%, 100% 85%);
+}
+
+.company .clip1-container p,
+.company .clip3-container p,
+.company .clip2-container p,
+.company .clip4-container p {
+    text-align: left;
+    padding: 5rem;
+    font-size: 1.25rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+/* Product Page */
+.products {
+    display : grid;
+    grid-template-columns : auto auto auto;
+    background-color : #2196F3;
+    padding : 1.25rem;
+}
+main section:first-child {
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    height : 20vh;
+}
+.product {
+    background-color : rgb(255, 255, 255, 0.8);
+    border : rgb(0, 0, 0, 0.8) solid 1px;
+    padding : 1.25rem;
+    font-size : 1.875rem;
+    text-align : center;
+}
+.product img {
+    filter : grayscale(85%);
+    height : 20vh;
+    width : 10vh;
+    transition : all 0.5s linear;
+}
+.product img:hover { /* When hovered the image is inlarge to get a better view */
+    transform : scale(1.8);
+}
+
+/* Contact Page */
+.contact {
+    display: grid;
+    text-align: center;
+    height: 75vh;
+    background-color: darkgray;
+    grid-template-rows: 1fr 2fr;
+}
+.contact section:nth-child(1) {
+    height : 15vh;
+}
+.contact section:nth-child(1) div h2 {
+    font-size : 3.5em;
+    text-decoration : underline;
+}
+.contact section:nth-child(1) div p {
+    font-size : 1.5em;
+}
+.contact section:nth-child(2) {
+    height : 35vh;
+}
+#fname, #lname, #homeNumber, #mobileNumber, #Email {
+    padding : 10px;
+    transition : all 0.1s linear;
+    border : solid 1px;
+    height : 2vh;
+}
+#fname:focus, #lname:focus, #homeNumber:focus, #mobileNumber:focus, #Email:focus, #fname:active, #lname:active, #homeNumber:active, #mobileNumber:active, #Email:active {
+    border : red solid 2px; /* Suppose to when active the border turns red but seems to only work after clicked thru */
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    align-items: center;
+    background-color: #a9aeb8;
+    height: 10vh;
+    margin: 0px;
+
+}
+.disclaimer{
+    justify-content: left;
+    flex-grow: 1;
+}
+.icons{
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.icons img{
+    height: 50px;
+    width: auto;
+    padding: 3px;
+}
+.callUs{
+    justify-content: right;
+    align-items: center;
+    flex-grow: 1;
+}
+
+
